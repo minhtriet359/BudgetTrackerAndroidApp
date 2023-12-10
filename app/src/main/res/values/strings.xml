@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">MM</string>
+    <string name="logout">Logout?</string>
+    <string name="no">NO</string>
+    <string name="yes">YES</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login">LOGIN</string>
+    <string name="signup">SIGN UP</string>
+</resources>
