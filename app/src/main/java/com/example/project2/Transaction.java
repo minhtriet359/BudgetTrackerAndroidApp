@@ -50,11 +50,9 @@ public abstract class Transaction {
 
     @Override
     public String toString() {
-        return "Transaction{" +
-                ", mAmount=" + mAmount +
-                ", mDate=" + mDate +
-                ", mDescription='" + mDescription + '\'' +
-                ", mUserId=" + mUserId +
-                '}';
+        return "Amount : $" + mAmount +"\n"+
+                "Date : " + getDate() + "\n"+
+                "Description : " + mDescription + "\n" +
+                "User ID : " + mUserId;
     }
 }

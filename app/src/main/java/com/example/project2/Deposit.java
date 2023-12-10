@@ -26,5 +26,10 @@ public class Deposit extends Transaction{
         this.mTransactionId = mTransactionId;
     }
 
-
+    @Override
+    public String toString() {
+        return "Deposit" + "\n" +
+                "Transaction ID : " + mTransactionId + "\n"+
+                super.toString();
+    }
 }

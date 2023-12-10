@@ -28,7 +28,7 @@ public interface ProjectDAO {
     List<Deposit> getAllDeposits();
 
     @Query("SELECT*FROM "+AppDatabase.DEPOSIT_TABLE+" WHERE mTransactionId=:transactionId")
-    List<Deposit> getDepositsById(int transactionId);
+    Deposit getDepositById(int transactionId);
 
     @Query("SELECT*FROM "+AppDatabase.DEPOSIT_TABLE+" WHERE mUserId=:userId ORDER BY mDate DESC")
     List<Deposit> getDepositsByUserId(int userId);
@@ -46,10 +46,10 @@ public interface ProjectDAO {
     List<Expense> getAllExpenses();
 
     @Query("SELECT*FROM "+AppDatabase.EXPENSE_TABLE+" WHERE mTransactionId=:transactionId")
-    List<Deposit> getExpensesById(int transactionId);
+    Expense getExpenseById(int transactionId);
 
     @Query("SELECT*FROM "+AppDatabase.EXPENSE_TABLE+" WHERE mUserId=:userId ORDER BY mDate DESC")
-    List<Deposit> getExpensesByUserId(int userId);
+    List<Expense> getExpensesByUserId(int userId);
 
     @Insert
     void insert(Balance... balances);

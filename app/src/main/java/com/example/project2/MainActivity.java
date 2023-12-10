@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
     private TextView mWelcomeText;
     private Button mAdminButton;
+    private Button mExpenseButton;
     private ProjectDAO mProjectDAO;
 
     private int mUserId=-1;
@@ -49,7 +50,17 @@ public class MainActivity extends AppCompatActivity {
 
         mWelcomeText=findViewById(R.id.welcomeMessageTextView);
         mAdminButton=findViewById(R.id.adminButton);
+        mExpenseButton=findViewById(R.id.expenseButton);
         refreshDisplay();
+
+        //set up expense button
+        mExpenseButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=ExpenseActivity.intentFactory(getApplicationContext(),mUserId);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
