@@ -57,6 +57,13 @@ public class SignupActivity extends AppCompatActivity {
             }
         });
 
+        mLoginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=LoginActivity.intentFactory(getApplicationContext());
+                startActivity(intent);
+            }
+        });
     }
 
     private void wireUpDisplay(){
