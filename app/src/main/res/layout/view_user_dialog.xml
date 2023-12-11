@@ -10,10 +10,10 @@
     android:padding="16dp">
 
     <TextView
-        android:id="@+id/viewIncomeEditText"
+        android:id="@+id/viewUserEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/viewIncomeLabelTextView"
+        android:layout_below="@+id/viewUserLabelTextView"
         android:layout_marginTop="7dp"
         android:text="Your information goes here" />
 
@@ -21,17 +21,17 @@
         android:id="@+id/dismissButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/viewIncomeEditText"
+        android:layout_below="@+id/viewUserEditText"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="75dp"
         android:text="Dismiss" />
 
     <TextView
-        android:id="@+id/viewIncomeLabelTextView"
+        android:id="@+id/viewUserLabelTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="All Current Incomes"
+        android:text="All Current Users"
         android:textSize="24sp"
         android:textStyle="bold" />
 </RelativeLayout>

@@ -54,13 +54,7 @@ public class IncomeActivity extends AppCompatActivity {
         //Get user ID from intent
         mUserId=getIntent().getIntExtra(USER_ID_KEY,-1);
         //set up tool bar and back button
-        Toolbar mToolbar=findViewById(R.id.my_toolbar);
-        setSupportActionBar(mToolbar);
-
-        ActionBar actionBar=getSupportActionBar();
-        if(actionBar!=null){
-            actionBar.setDisplayHomeAsUpEnabled(true);
-        }
+        setUpToolBar();
         //set actions for the buttons
         mAddButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -82,10 +76,20 @@ public class IncomeActivity extends AppCompatActivity {
         });
     }
 
+    private void setUpToolBar(){
+        Toolbar mToolbar=findViewById(R.id.my_toolbar);
+        setSupportActionBar(mToolbar);
+
+        ActionBar actionBar=getSupportActionBar();
+        if(actionBar!=null){
+            actionBar.setDisplayHomeAsUpEnabled(true);
+        }
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater=getMenuInflater();
-        inflater.inflate(R.menu.logout_menu,menu);
+        inflater.inflate(R.menu.nonlogout_menu,menu);
         return true;
     }
 
