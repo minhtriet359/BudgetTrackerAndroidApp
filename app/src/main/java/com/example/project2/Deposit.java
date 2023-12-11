@@ -13,9 +13,8 @@ public class Deposit extends Transaction{
     @PrimaryKey(autoGenerate = true)
     private int mTransactionId;
 
-    public Deposit(int mTransactionId, double mAmount, Date mDate, String mDescription, int mUserId) {
+    public Deposit(double mAmount, Date mDate, String mDescription, int mUserId) {
         super(mAmount, mDate, mDescription, mUserId);
-        this.mTransactionId=mTransactionId;
     }
 
     public int getTransactionId() {
