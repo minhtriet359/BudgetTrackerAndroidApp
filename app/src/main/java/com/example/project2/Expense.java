@@ -12,9 +12,11 @@ public class Expense extends Transaction{
 
     @PrimaryKey(autoGenerate = true)
     private int mTransactionId;
+    private String mType;
 
-    public Expense(double mAmount, Date mDate, String mDescription, int mUserId) {
+    public Expense(double mAmount, Date mDate, String mDescription,String mType, int mUserId) {
         super(mAmount, mDate, mDescription, mUserId);
+        this.mType=mType;
     }
 
     public int getTransactionId() {
@@ -25,10 +27,19 @@ public class Expense extends Transaction{
         this.mTransactionId = mTransactionId;
     }
 
+    public String getType() {
+        return mType;
+    }
+
+    public void setType(String mType) {
+        this.mType = mType;
+    }
+
     @Override
     public String toString() {
         return "Expense" + "\n" +
                 "Transaction ID : " + mTransactionId + "\n"+
-                super.toString();
+                super.toString()+"\n"+
+                "Type : "+mType;
     }
 }

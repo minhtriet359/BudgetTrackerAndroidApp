@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
     private Button mAdminButton;
     private Button mExpenseButton;
     private Button mIncomeButton;
+    private Button mBalanceButton;
     private ProjectDAO mProjectDAO;
 
     private int mUserId=-1;
@@ -53,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
         mAdminButton=findViewById(R.id.adminButton);
         mExpenseButton=findViewById(R.id.expenseButton);
         mIncomeButton=findViewById(R.id.incomeButton);
+        mBalanceButton=findViewById(R.id.balanceButton);
         refreshDisplay();
 
         //set up buttons
@@ -80,6 +82,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        mBalanceButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=BalanceActivity.intentFactory(getApplicationContext(),mUserId);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override

@@ -7,4 +7,12 @@
     <string name="password">Password</string>
     <string name="login">LOGIN</string>
     <string name="signup">SIGN UP</string>
+    <string-array name="types">
+        <item>Bill/Utilities</item>
+        <item>Groceries</item>
+        <item>Food/Drink</item>
+        <item>Personal</item>
+        <item>Gas</item>
+        <item>Shopping</item>
+    </string-array>
 </resources>

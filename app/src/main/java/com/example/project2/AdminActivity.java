@@ -33,7 +33,7 @@ public class AdminActivity extends AppCompatActivity {
     private Button mRemoveButton;
     private TextView mWelcomeMessage;
 
-    private int mUserId;
+    private int mUserId=-1;
     private User user;
     private List<User> mUsers;
 

@@ -35,11 +35,21 @@
         android:layout_marginEnd="85dp"
         android:hint="Description" />
 
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="308dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/descriptionEditText"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="87dp"
+        android:entries="@array/types" />
+
     <Button
         android:id="@+id/confirmButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/descriptionEditText"
+        android:layout_below="@+id/spinner"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="39dp"
         android:layout_marginEnd="91dp"
@@ -49,7 +59,7 @@
         android:id="@+id/cancelButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/descriptionEditText"
+        android:layout_below="@+id/spinner"
         android:layout_marginTop="39dp"
         android:layout_marginEnd="24dp"
         android:layout_toStartOf="@+id/confirmButton"

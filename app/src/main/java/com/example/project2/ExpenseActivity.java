@@ -15,8 +15,11 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -119,6 +122,7 @@ public class ExpenseActivity extends AppCompatActivity {
     }
 
     private void addExpenseDialog() {
+        final String[] type = new String[1];
         // Create a dialog builder
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         // Get the layout inflater
@@ -131,6 +135,11 @@ public class ExpenseActivity extends AppCompatActivity {
         EditText mDescription = dialogView.findViewById(R.id.descriptionEditText);
         Button mConfirmButton = dialogView.findViewById(R.id.confirmButton);
         Button mCancelButton=dialogView.findViewById(R.id.cancelButton);
+        //Set up spinner
+        Spinner spinner=dialogView.findViewById(R.id.spinner);
+        ArrayAdapter<CharSequence>adapter=ArrayAdapter.createFromResource(this,R.array.types,android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
         // Set up the dialog
         builder.setView(dialogView);
         // Create and show the dialog
@@ -166,12 +175,26 @@ public class ExpenseActivity extends AppCompatActivity {
                     Log.d("PROJECT2","Couldn't convert date");
                 }
 
-                Expense expense = new Expense(amount,date,description,mUserId);
+                Expense expense = new Expense(amount,date,description,type[0],mUserId);
                 mProjectDAO.insert(expense);
                 Toast.makeText(ExpenseActivity.this, "Expense Added Successfully", Toast.LENGTH_SHORT).show();
                 dialog.dismiss();
             }
         });
+
+        //set listener for spinner
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                type[0] = parent.getItemAtPosition(position).toString();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                //do nothing here
+            }
+        });
+
         // Show the dialog
         dialog.show();
     }

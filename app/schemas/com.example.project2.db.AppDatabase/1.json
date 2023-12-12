@@ -2,17 +2,23 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "73ddc89f65a87b5e9779870b981fa9cd",
+    "identityHash": "b51064154ed35f6608641d4be7717f34",
     "entities": [
       {
         "tableName": "EXPENSE_TABLE",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`mTransactionId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `mAmount` REAL NOT NULL, `mDate` INTEGER, `mDescription` TEXT, `mUserId` INTEGER NOT NULL)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`mTransactionId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `mType` TEXT, `mAmount` REAL NOT NULL, `mDate` INTEGER, `mDescription` TEXT, `mUserId` INTEGER NOT NULL)",
         "fields": [
           {
             "fieldPath": "mTransactionId",
             "columnName": "mTransactionId",
             "affinity": "INTEGER",
             "notNull": true
+          },
+          {
+            "fieldPath": "mType",
+            "columnName": "mType",
+            "affinity": "TEXT",
+            "notNull": false
           },
           {
             "fieldPath": "mAmount",
@@ -172,7 +178,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '73ddc89f65a87b5e9779870b981fa9cd')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'b51064154ed35f6608641d4be7717f34')"
     ]
   }
 }
