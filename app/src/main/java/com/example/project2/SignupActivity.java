@@ -37,24 +37,24 @@ public class SignupActivity extends AppCompatActivity {
         getDatabase();
 
 
-        mSignupButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                getValuesFromDisplay();
-                if(validateUsername()){
-                    if(validatePassword()){
-                        User user=new User(username,password,false);
-                        mProjectDAO.insert(user);
-                        Toast.makeText(SignupActivity.this, "Account created successfully!", Toast.LENGTH_SHORT).show();
-                        Intent intent=LoginActivity.intentFactory(getApplicationContext());
-                        startActivity(intent);
+            mSignupButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    getValuesFromDisplay();
+                    if(validateUsername()){
+                        if(validatePassword()){
+                            User user=new User(username,password,false);
+                            mProjectDAO.insert(user);
+                            Toast.makeText(SignupActivity.this, "Account created successfully!", Toast.LENGTH_SHORT).show();
+                            Intent intent=LoginActivity.intentFactory(getApplicationContext());
+                            startActivity(intent);
+                        }else{
+                            Toast.makeText(SignupActivity.this, "Password does not match. Try again.", Toast.LENGTH_SHORT).show();
+                        }
                     }else{
-                        Toast.makeText(SignupActivity.this, "Password does not match. Try again.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(SignupActivity.this, "Username already exists. Try again.", Toast.LENGTH_SHORT).show();
                     }
-                }else{
-                    Toast.makeText(SignupActivity.this, "Username already exists. Try again.", Toast.LENGTH_SHORT).show();
                 }
-            }
         });
 
         mLoginButton.setOnClickListener(new View.OnClickListener() {

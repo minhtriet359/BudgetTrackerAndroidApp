@@ -21,11 +21,8 @@ public class Balance {
     private int mUserId;
     private int mTransactionId;
 
-    public Balance(double mRemainingBalance, int mUserId) {
-        this.mRemainingBalance = mRemainingBalance;
-        this.mUserId = mUserId;
-        //expenses=new ArrayList<>();
-        //deposits=new ArrayList<>();
+    public Balance(int mUserId) {
+        this.mUserId=mUserId;
     }
 
     public void calculateBalance(List<Expense>expenses,List<Deposit>deposits){
